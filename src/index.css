@@ -1,0 +1,234 @@
+:root {
+  --bg-color: #F5F7FB;
+  --text-dark: #293264;
+  --btn-primary: #4D5B9E;
+  --btn-primary-text: #F8F8F8;
+  
+  --choice-selected: #D6DBF5;
+  --choice-correct: #94D7A2;
+  --choice-incorrect: #F8BCBC;
+  
+  --blob-yellow: #FFFAD1;
+  --blob-blue: #DEEBF8;
+  --divider-color: #DBDEF0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Karla', sans-serif;
+  margin: 0;
+  color: var(--text-dark);
+}
+
+main {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background Blobs */
+.blob {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+.blob-top {
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background-color: var(--blob-yellow);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.blob-bottom {
+  bottom: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background-color: var(--blob-blue);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+.app-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 700px;
+  padding: 40px;
+  background: transparent;
+}
+
+/* Start Screen */
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.start-screen h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.start-screen p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: var(--text-dark);
+}
+
+/* Generic Button */
+.btn {
+  background-color: var(--btn-primary);
+  color: var(--btn-primary-text);
+  border: none;
+  border-radius: 15px;
+  padding: 15px 40px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:active {
+  transform: translateY(2px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Quiz Screen */
+.quiz-screen {
+  display: flex;
+  flex-direction: column;
+}
+
+.questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.question-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.question-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.choices-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.choice-btn {
+  background-color: transparent;
+  border: 1px solid var(--btn-primary);
+  color: var(--text-dark);
+  border-radius: 12px;
+  padding: 8px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.choice-btn:hover:not(:disabled) {
+  background-color: var(--choice-selected);
+  border-color: var(--choice-selected);
+}
+
+.choice-btn.selected {
+  background-color: var(--choice-selected);
+  border-color: var(--choice-selected);
+}
+
+.choice-btn.correct {
+  background-color: var(--choice-correct);
+  border-color: var(--choice-correct);
+}
+
+.choice-btn.incorrect {
+  background-color: var(--choice-incorrect);
+  border-color: var(--choice-incorrect);
+  opacity: 0.6;
+}
+
+.choice-btn.faded {
+  opacity: 0.5;
+}
+
+.choice-btn:disabled {
+  cursor: default;
+}
+
+.question-divider {
+  border: 0;
+  height: 1px;
+  background-color: var(--divider-color);
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Quiz Footer */
+.quiz-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.score-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.action-btn {
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.error-message {
+  color: #D8000C;
+  margin-top: 15px;
+  font-weight: bold;
+}
