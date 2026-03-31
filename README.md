@@ -11,7 +11,7 @@ A fun and interactive trivia quiz application built with React and Vite. Test yo
 
 ## 🚀 Live Demo
 
-[Link to Live Site] <!-- Add your deployed link here when ready -->
+[https://quizzical124.netlify.app/] <!-- Add your deployed link here when ready -->
 
 ## 🛠️ Built With
 
